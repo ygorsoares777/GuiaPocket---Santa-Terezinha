@@ -3,15 +3,15 @@
     <style name="Theme.GuiaPocketYgor" parent="Base.Theme.GuiaPocketYgor" />
 
     <style name="Base.Theme.GuiaPocketYgor" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Cores primárias -->
+
         <item name="colorPrimary">@color/primaryAzul</item>
         <item name="colorOnPrimary">@android:color/white</item>
 
-        <!-- Cores de superfície -->
+
         <item name="colorSurface">@color/surface</item>
         <item name="colorOnSurface">@color/textLight</item>
 
-        <!-- Fundo -->
+
         <item name="android:windowBackground">@color/backgroundLight</item>
         <item name="android:colorBackground">@color/backgroundLight</item>
     </style>

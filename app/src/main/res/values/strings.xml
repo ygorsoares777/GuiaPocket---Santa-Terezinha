@@ -1,13 +1,13 @@
 <resources>
-    <!-- App Name -->
+
     <string name="app_name">Neighborhood Guide - Américo Brasiliense</string>
 
-    <!-- Default description -->
+
     <string name="service_image">Business Image</string>
 
 
 
-    <!-- 1️⃣ Alves Mercado -->
+
     <string name="alves_mercado_nome">Alves Market</string>
     <string name="alves_mercado_categoria">Supermarket</string>
     <string name="alves_mercado_descricao">
@@ -17,7 +17,7 @@
         Alameda Alberto J.E.M Rollo, 355 - Centro, Américo Brasiliense - SP, 14820-000
     </string>
 
-    <!-- 2️⃣ Amaluca -->
+
     <string name="amaluca_nome">Amaluca</string>
     <string name="amaluca_categoria">Stationery</string>
     <string name="amaluca_descricao">
@@ -27,7 +27,7 @@
         Av. Secondo Della Rovere, 539, Américo Brasiliense - SP, 14821-208
     </string>
 
-    <!-- 3️⃣ Kobauto -->
+
     <string name="kobauto_nome">Kobauto</string>
     <string name="kobauto_categoria">Auto Parts and Accessories</string>
     <string name="kobauto_descricao">
@@ -37,7 +37,7 @@
         Av. Secondo Della Rovere - São José, Américo Brasiliense - SP, 14821-208
     </string>
 
-    <!-- 4️⃣ Ponto do Churrasco -->
+
     <string name="ponto_churrasco_nome">Ponto do Churrasco</string>
     <string name="ponto_churrasco_categoria">Restaurant</string>
     <string name="ponto_churrasco_descricao">
@@ -47,7 +47,7 @@
         Alameda Alberto J.E.M Rollo, 900 - Santa Terezinha, Américo Brasiliense - SP, 14820-000
     </string>
 
-    <!-- 5️⃣ Quintal do Açaí -->
+
     <string name="quintal_acai_nome">Quintal do Açaí</string>
     <string name="quintal_acai_categoria">Ice Cream Shop</string>
     <string name="quintal_acai_descricao">
@@ -57,7 +57,7 @@
         Alameda Alberto J.E.M Rollo, 440, Américo Brasiliense - SP, 14820-000
     </string>
 
-    <!-- 6️⃣ Sempre On -->
+
     <string name="sempreon_nome">Sempre On</string>
     <string name="sempreon_categoria">Beverage distributor</string>
     <string name="sempreon_descricao">Sempre ON is a beverage distributor that offers a variety of frozen products.</string>
