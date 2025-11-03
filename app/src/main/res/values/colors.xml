@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 🎨 Cores principais -->
+    <color name="primaryAzul">#1976D2</color> <!-- Azul principal (título, destaque) -->
+    <color name="primaryVerd">#43A047</color> <!-- Verde dos botões -->
+    <color name="primaryLaranja">#F57C00</color> <!-- Laranja para contrastes -->
+
+    <!-- 🌞 Fundo e textos -->
+    <color name="backgroundLight">#FFFFFF</color> <!-- Fundo branco -->
+    <color name="textLight">#000000</color> <!-- Texto preto -->
+
+    <!-- 🧱 Cores de componentes -->
+    <color name="surface">#F5F5F5</color> <!-- Fundo de cards/listas -->
+    <color name="divider">#DDDDDD</color> <!-- Linhas divisórias -->
+
+    <!-- 🔘 Botões -->
+    <color name="buttonBackground">@color/primaryVerd</color>
+    <color name="buttonText">@android:color/white</color>
+</resources>

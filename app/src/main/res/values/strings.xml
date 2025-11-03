@@ -1,0 +1,73 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Neighborhood Guide - Américo Brasiliense</string>
+
+    <!-- Default description -->
+    <string name="service_image">Business Image</string>
+
+
+
+    <!-- 1️⃣ Alves Mercado -->
+    <string name="alves_mercado_nome">Alves Market</string>
+    <string name="alves_mercado_categoria">Supermarket</string>
+    <string name="alves_mercado_descricao">
+        A supermarket with over 23 years of experience in the food industry, committed to offering quality and savings to local customers.
+    </string>
+    <string name="alves_mercado_endereco">
+        Alameda Alberto J.E.M Rollo, 355 - Centro, Américo Brasiliense - SP, 14820-000
+    </string>
+
+    <!-- 2️⃣ Amaluca -->
+    <string name="amaluca_nome">Amaluca</string>
+    <string name="amaluca_categoria">Stationery</string>
+    <string name="amaluca_descricao">
+        Amaluca is a store offering a wide variety of products, including stationery items, toys, gifts, kitchenware, backpacks, and handbags.
+    </string>
+    <string name="amaluca_endereco">
+        Av. Secondo Della Rovere, 539, Américo Brasiliense - SP, 14821-208
+    </string>
+
+    <!-- 3️⃣ Kobauto -->
+    <string name="kobauto_nome">Kobauto</string>
+    <string name="kobauto_categoria">Auto Parts and Accessories</string>
+    <string name="kobauto_descricao">
+        Kobauto Auto Parts and Accessories is a specialized store offering automotive parts for various makes and models, focusing on top-quality products.
+    </string>
+    <string name="kobauto_endereco">
+        Av. Secondo Della Rovere - São José, Américo Brasiliense - SP, 14821-208
+    </string>
+
+    <!-- 4️⃣ Ponto do Churrasco -->
+    <string name="ponto_churrasco_nome">Ponto do Churrasco</string>
+    <string name="ponto_churrasco_categoria">Restaurant</string>
+    <string name="ponto_churrasco_descricao">
+        Ponto do Churrasco is a restaurant that serves charcoal-grilled barbecue and homemade meals, offering executive dishes and delivery. It’s known for its quality meats and homemade seasoning.
+    </string>
+    <string name="ponto_churrasco_endereco">
+        Alameda Alberto J.E.M Rollo, 900 - Santa Terezinha, Américo Brasiliense - SP, 14820-000
+    </string>
+
+    <!-- 5️⃣ Quintal do Açaí -->
+    <string name="quintal_acai_nome">Quintal do Açaí</string>
+    <string name="quintal_acai_categoria">Ice Cream Shop</string>
+    <string name="quintal_acai_descricao">
+        Quintal do Açaí specializes in açaí and ice creams, offering options such as the “Casadinho” — a mix of açaí and cupuaçu with banana and granola.
+    </string>
+    <string name="quintal_acai_endereco">
+        Alameda Alberto J.E.M Rollo, 440, Américo Brasiliense - SP, 14820-000
+    </string>
+
+    <!-- 6️⃣ Sempre On -->
+    <string name="sempreon_nome">Sempre On</string>
+    <string name="sempreon_categoria">Beverage distributor</string>
+    <string name="sempreon_descricao">Sempre ON is a beverage distributor that offers a variety of frozen products.</string>
+    <string name="sempreon_endereco">Alameda Alberto J.E.M Rollo, 745 - Santa Terezinha, Américo Brasiliense - SP, 14820-000</string>
+
+
+    <string name="btn_ligar">Call this business</string>
+    <string name="btn_endereco">View address</string>
+    <string name="btn_voltar">Back</string>
+
+    <string name="call">Call</string>
+    <string name="open_in_maps">Open in Maps</string>
+</resources>

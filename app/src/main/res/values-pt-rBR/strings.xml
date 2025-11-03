@@ -1,0 +1,73 @@
+<resources>
+    <!-- Nome do App -->
+    <string name="app_name">Guia do Bairro - Américo Brasiliense</string>
+
+    <!-- Descrição padrão -->
+    <string name="service_image">Imagem do comércio</string>
+
+
+
+    <!-- 1️⃣ Alves Mercado -->
+    <string name="alves_mercado_nome">Alves Mercado</string>
+    <string name="alves_mercado_categoria">Mercado</string>
+    <string name="alves_mercado_descricao">
+        Um supermercado que atua há mais de 23 anos no ramo de produtos alimentícios, buscando oferecer qualidade e economia aos clientes da região.
+    </string>
+    <string name="alves_mercado_endereco">
+        Alameda Alberto J.E.M Rollo, 355 - Centro, Américo Brasiliense - SP, 14820-000
+    </string>
+
+    <!-- 2️⃣ Amaluca -->
+    <string name="amaluca_nome">Amaluca</string>
+    <string name="amaluca_categoria">Papelaria</string>
+    <string name="amaluca_descricao">
+        A Amaluca é uma loja que oferece uma variedade de produtos, com destaque para artigos de papelaria, brinquedos, presentes, e itens para cozinha, mochilas e bolsas.
+    </string>
+    <string name="amaluca_endereco">
+        Av. Secondo Della Rovere, 539, Américo Brasiliense - SP, 14821-208
+    </string>
+
+    <!-- 3️⃣ Kobauto -->
+    <string name="kobauto_nome">Kobauto</string>
+    <string name="kobauto_categoria">Peças e Acessórios</string>
+    <string name="kobauto_descricao">
+        A Kobauto Auto Peças e Acessórios é uma loja especializada que trabalha com peças automotivas de diversas marcas e modelos. A loja foca em produtos de alta qualidade, oferecendo peças de primeira linha.
+    </string>
+    <string name="kobauto_endereco">
+        Av. Secondo Della Rovere - São José, Américo Brasiliense - SP, 14821-208
+    </string>
+
+    <!-- 4️⃣ Ponto do Churrasco -->
+    <string name="ponto_churrasco_nome">Ponto do Churrasco</string>
+    <string name="ponto_churrasco_categoria">Restaurante</string>
+    <string name="ponto_churrasco_descricao">
+        O Ponto do Churrasco é um restaurante que serve churrasco na brasa e comida caseira, com pratos executivos e delivery. É conhecido por sua atenção aos apreciadores de carne e pelo tempero caseiro.
+    </string>
+    <string name="ponto_churrasco_endereco">
+        Alameda Alberto J.E.M Rollo, 900 - Santa Terezinha, Américo Brasiliense - SP, 14820-000
+    </string>
+
+    <!-- 5️⃣ Quintal do Açaí -->
+    <string name="quintal_acai_nome">Quintal do Açaí</string>
+    <string name="quintal_acai_categoria">Sorveteria</string>
+    <string name="quintal_acai_descricao">
+        O Quintal do Açaí é uma loja especializada em açaí e sorvetes, que oferece opções como o "Casadinho" de açaí e cupuaçu, com banana e granola.
+    </string>
+    <string name="quintal_acai_endereco">
+        Alameda Alberto J.E.M Rollo, 440, Américo Brasiliense - SP, 14820-000
+    </string>
+
+    <!-- 6️⃣ Sempre On -->
+    <string name="sempreon_nome">Sempre on</string>
+    <string name="sempreon_categoria">Distribuidora de bebidas</string>
+    <string name="sempreon_descricao">A Sempre ON é uma distribuidora de bebidas que oferece uma variedade de produtos gelados.</string>
+    <string name="sempreon_endereco">Alameda Alberto J.E.M Rollo, 745 - Santa Terezinha, Américo Brasiliense - SP, 14820-000</string>
+
+
+    <string name="btn_ligar">Ligar para este comércio</string>
+    <string name="btn_endereco">Ver endereço</string>
+    <string name="btn_voltar">Voltar</string>
+
+    <string name="call">Ligar</string>
+    <string name="open_in_maps">Abrir no Maps</string>
+</resources>
