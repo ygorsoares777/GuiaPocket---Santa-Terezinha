@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundLight"
+    android:padding="16dp"
+    tools:context="com.example.guiapocket_ygor.ui.CadastroActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:id="@+id/tvTituloCadastro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/title_register"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/textLight"
+                android:textAlignment="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="24dp"/>
+
+            <ImageView
+                android:id="@+id/imgFoto"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_launcher_foreground"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/business_image"
+                android:background="@color/surface"
+                android:padding="4dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTituloCadastro"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/btnSelecionarImagem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_image"
+                android:backgroundTint="@color/primaryAzul"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/imgFoto"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="24dp"/>
+
+            <EditText
+                android:id="@+id/edtNome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/name_hint"
+                android:textColor="@color/textLight"
+                android:inputType="text"
+                android:drawableStart="@android:drawable/ic_menu_edit"
+                android:drawablePadding="8dp"
+                app:layout_constraintTop_toBottomOf="@id/btnSelecionarImagem"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/edtCategoria"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/category_hint"
+                android:textColor="@color/textLight"
+                android:inputType="text"
+                android:drawableStart="@android:drawable/ic_menu_sort_by_size"
+                android:drawablePadding="8dp"
+                app:layout_constraintTop_toBottomOf="@id/edtNome"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/edtTelefone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone_hint"
+                android:textColor="@color/textLight"
+                android:inputType="phone"
+                android:drawableStart="@android:drawable/ic_menu_call"
+                android:drawablePadding="8dp"
+                app:layout_constraintTop_toBottomOf="@id/edtCategoria"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/edtEndereco"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/address_hint"
+                android:textColor="@color/textLight"
+                android:inputType="text"
+                android:drawableStart="@android:drawable/ic_menu_mapmode"
+                android:drawablePadding="8dp"
+                app:layout_constraintTop_toBottomOf="@id/edtTelefone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/edtDescricao"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:hint="@string/description_hint"
+                android:textColor="@color/textLight"
+                android:inputType="textMultiLine"
+                android:gravity="top"
+                android:minLines="3"
+                android:drawableStart="@android:drawable/ic_menu_edit"
+                android:drawablePadding="8dp"
+                app:layout_constraintTop_toBottomOf="@id/edtEndereco"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="32dp"/>
+
+            <Button
+                android:id="@+id/btnSalvar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/save"
+                android:textSize="18sp"
+                android:backgroundTint="@color/primaryVerd"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/edtDescricao"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="12dp"/>
+
+            <Button
+                android:id="@+id/btnVoltar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:textSize="18sp"
+                android:backgroundTint="@color/divider"
+                android:textColor="@color/textLight"
+                app:layout_constraintTop_toBottomOf="@id/btnSalvar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

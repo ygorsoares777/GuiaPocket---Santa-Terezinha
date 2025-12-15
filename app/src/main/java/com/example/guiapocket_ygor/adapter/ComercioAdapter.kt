@@ -1,38 +1,43 @@
 package com.example.guiapocket_ygor.adapter
 
-import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.example.guiapocket_ygor.databinding.ItemComercioBinding
 import com.example.guiapocket_ygor.model.Comercio
 
-class ComercioAdapter (
-    context: Context,
-    private val lista: List<Comercio>
-) : ArrayAdapter<Comercio>(context, 0, lista) {
+class ComercioAdapter(
+    private val comercios: List<Comercio>,
+    private val onClick: (Comercio) -> Unit
+) : RecyclerView.Adapter<ComercioAdapter.ViewHolder>() {
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val binding: ItemComercioBinding
-        val view: View
+    inner class ViewHolder(val binding: ItemComercioBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
-        if (convertView == null) {
-            binding = ItemComercioBinding.inflate(LayoutInflater.from(context), parent, false)
-            view = binding.root
-            view.tag = binding
-        } else {
-            view = convertView
-            binding = view.tag as ItemComercioBinding
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val binding = ItemComercioBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return ViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val comercio = comercios[position]
+
+        holder.binding.tvNome.text = comercio.nome
+        holder.binding.tvCategoria.text = comercio.categoria
+
+        if (comercio.foto.isNotEmpty()) {
+            holder.binding.imgFoto.setImageURI(Uri.parse(comercio.foto))
         }
 
-        val comercio = lista[position]
-
-        binding.imgFoto.setImageResource(comercio.foto)
-        binding.tvNome.text = comercio.nome
-        binding.tvCategoria.text = comercio.categoria
-
-
-        return view
+        holder.binding.root.setOnClickListener {
+            onClick(comercio)
+        }
     }
+
+    override fun getItemCount(): Int = comercios.size
 }

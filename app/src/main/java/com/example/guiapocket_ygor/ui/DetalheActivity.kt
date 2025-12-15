@@ -5,65 +5,68 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import com.example.guiapocket_ygor.R
 import com.example.guiapocket_ygor.databinding.ActivityDetalheBinding
+import com.example.guiapocket_ygor.model.Comercio
 
 class DetalheActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetalheBinding
+    private lateinit var comercio: Comercio
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetalheBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        exibirInformacoes()
-        configurarBotoes()
+        comercio = intent.getSerializableExtra("comercio", Comercio::class.java) ?: run {
+            Toast.makeText(this, getString(R.string.business_not_found), Toast.LENGTH_SHORT).show()
+            finish()
+            return
+        }
+
+        setupViews()
+        setupListeners()
     }
 
-    private fun exibirInformacoes() {
-        val nome = intent.getStringExtra("NOME_COMERCIO")
-        val categoria = intent.getStringExtra("CATEGORIA_COMERCIO")
-        val descricao = intent.getStringExtra("DESCRICAO_COMERCIO")
-        val telefone = intent.getStringExtra("TELEFONE_COMERCIO")
-        val endereco = intent.getStringExtra("ENDERECO_COMERCIO")
-        val imagem = intent.getIntExtra("IMAGEM_COMERCIO", R.drawable.ic_launcher_foreground)
+    private fun setupViews() {
+        binding.tvNome.text = comercio.nome
+        binding.tvCategoria.text = comercio.categoria
+        binding.tvDescricao.text = comercio.descricao
 
-        // Definir todas as informações nos TextViews
-        binding.tvNome.text = nome ?: getString(R.string.service_image)
-        binding.tvCategoria.text = categoria ?: getString(R.string.service_image)
-        binding.tvDescricao.text = descricao ?: getString(R.string.service_image)
-        binding.imgFoto.setImageResource(imagem)
+        if (comercio.foto.isNotEmpty()) {
+            binding.imgFoto.setImageURI(comercio.foto.toUri())
+        }
 
-        // Guardar telefone e endereço nos botões para usar nos listeners
-        binding.btnLigar.tag = telefone
-        binding.btnEndereco.tag = endereco
+        binding.btnLigar.tag = comercio.telefone
+        binding.btnEndereco.tag = comercio.endereco
     }
 
-    private fun configurarBotoes() {
-        // Botão Ligar - Intent implícita para discador
+    private fun setupListeners() {
         binding.btnLigar.setOnClickListener {
             val telefone = it.tag as? String
             if (!telefone.isNullOrEmpty()) {
-                val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$telefone"))
-                startActivity(intent)
+                startActivity(Intent(Intent.ACTION_DIAL, "tel:$telefone".toUri()))
             } else {
-                Toast.makeText(this, getString(R.string.service_image), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.phone_not_available), Toast.LENGTH_SHORT).show()
             }
         }
 
-        // Botão Ver Endereço - Intent implícita para Google Maps
         binding.btnEndereco.setOnClickListener {
             val endereco = it.tag as? String
             if (!endereco.isNullOrEmpty()) {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=${Uri.encode(endereco)}"))
-                startActivity(intent)
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        "geo:0,0?q=${Uri.encode(endereco)}".toUri()
+                    )
+                )
             } else {
-                Toast.makeText(this, getString(R.string.service_image), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.address_not_available), Toast.LENGTH_SHORT).show()
             }
         }
 
-        // Botão Voltar - Finaliza a Activity atual
         binding.btnVoltar.setOnClickListener {
             finish()
         }

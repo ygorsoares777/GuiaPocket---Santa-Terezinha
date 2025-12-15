@@ -1,13 +1,17 @@
 package com.example.guiapocket_ygor.model
 
-data class Comercio(
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import java.io.Serializable
 
-    val id: Int,
-    val foto: Int,
+@Entity(tableName = "comercios")
+data class Comercio(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+    val foto: String,
     val nome: String,
     val categoria: String,
-    val descricao: String,
     val telefone: String,
-    val endereco: String
-
-)
+    val endereco: String,
+    val descricao: String
+) : Serializable

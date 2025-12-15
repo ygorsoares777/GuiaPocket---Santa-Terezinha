@@ -1,94 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="?android:attr/colorBackground"
-    android:gravity="center_horizontal">
+    android:background="@color/backgroundLight"
+    android:padding="24dp"
+    tools:context="com.example.guiapocket_ygor.ui.DetalheActivity">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="24dp"
-        android:fillViewport="true">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:paddingBottom="24dp">
 
             <ImageView
                 android:id="@+id/imgFoto"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:src="@drawable/ic_launcher_foreground"
                 android:scaleType="centerCrop"
-                android:layout_marginBottom="24dp"
-                android:contentDescription="@string/service_image" />
+                android:contentDescription="@string/business_image"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="24dp"/>
 
             <TextView
                 android:id="@+id/tvNome"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/service_image"
-                android:textSize="20sp"
+                android:text="Nome do Comércio"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                android:textColor="?android:attr/textColorPrimary"
-                android:layout_marginBottom="8dp" />
+                android:textColor="@color/textLight"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/imgFoto"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="8dp"/>
 
             <TextView
                 android:id="@+id/tvCategoria"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/service_image"
-                android:textSize="16sp"
-                android:textColor="?android:attr/textColorSecondary"
-                android:layout_marginBottom="4dp" />
+                android:text="Categoria"
+                android:textSize="18sp"
+                android:textColor="@color/textLight"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/tvNome"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
 
             <TextView
                 android:id="@+id/tvDescricao"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/service_image"
+                android:text="Descrição do comércio"
                 android:textSize="16sp"
-                android:textColor="?android:attr/textColorPrimary"
-                android:layout_marginBottom="32dp" />
+                android:textColor="@color/textLight"
+                android:textAlignment="center"
+                android:lineSpacingExtra="4dp"
+                app:layout_constraintTop_toBottomOf="@id/tvCategoria"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="32dp"/>
 
             <Button
                 android:id="@+id/btnLigar"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_ligar"
-                android:backgroundTint="?attr/colorPrimary"
-                android:textColor="?attr/colorOnPrimary"
-                android:textStyle="bold"
-                android:elevation="4dp"
-                android:layout_marginBottom="16dp" />
+                android:text="@string/call_business"
+                android:textSize="18sp"
+                android:backgroundTint="@color/primaryAzul"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/tvDescricao"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
 
             <Button
                 android:id="@+id/btnEndereco"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_endereco"
+                android:text="@string/view_address"
+                android:textSize="18sp"
                 android:backgroundTint="@color/primaryVerd"
-                android:textColor="?attr/colorOnPrimary"
-                android:textStyle="bold"
-                android:elevation="4dp"
-                android:layout_marginBottom="16dp" />
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/btnLigar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="16dp"/>
 
             <Button
                 android:id="@+id/btnVoltar"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_voltar"
+                android:text="@string/back"
+                android:textSize="18sp"
                 android:backgroundTint="@color/primaryLaranja"
-                android:textColor="?attr/colorOnPrimary"
-                android:textStyle="bold"
-                android:elevation="2dp" />
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@id/btnEndereco"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-        </LinearLayout>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

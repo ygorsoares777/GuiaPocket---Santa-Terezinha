@@ -1,106 +1,101 @@
 package com.example.guiapocket_ygor.ui
 
-
 import android.content.Intent
 import android.os.Bundle
-import android.widget.AdapterView
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.appcompat.app.AppCompatActivity
-import com.example.guiapocket_ygor.R
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.guiapocket_ygor.adapter.ComercioAdapter
+import com.example.guiapocket_ygor.data.database.AppDatabase
 import com.example.guiapocket_ygor.databinding.ActivityMainBinding
 import com.example.guiapocket_ygor.model.Comercio
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var comercios: MutableList<Comercio>
     private lateinit var adapter: ComercioAdapter
-    private lateinit var listaComercios: List<Comercio>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configurarLista()
-        configurarClique()
+        comercios = mutableListOf()
+
+        setupRecyclerView()
+        loadData()
+        setupListeners()
     }
 
-    private fun configurarLista() {
-        listaComercios = listOf(
-            Comercio(
-                id = 1,
-                foto = R.drawable.kobauto,
-                nome = getString(R.string.kobauto_nome),
-                categoria = getString(R.string.kobauto_categoria),
-                descricao = getString(R.string.kobauto_descricao),
-                telefone = "(16) 99742-3643",
-                endereco = getString(R.string.kobauto_endereco)
-            ),
-            Comercio(
-                id = 2,
-                foto = R.drawable.sempreon,
-                nome = getString(R.string.sempreon_nome),
-                categoria = getString(R.string.sempreon_categoria),
-                descricao = getString(R.string.sempreon_descricao),
-                telefone = "(16) 99744-8327",
-                endereco = getString(R.string.sempreon_endereco)
-            ),
-            Comercio(
-                id = 3,
-                foto = R.drawable.quintal,
-                nome = getString(R.string.quintal_acai_nome),
-                categoria = getString(R.string.quintal_acai_categoria),
-                descricao = getString(R.string.quintal_acai_descricao),
-                telefone = "(16) 99731-7051",
-                endereco = getString(R.string.quintal_acai_endereco)
-            ),
-            Comercio(
-                id = 4,
-                foto = R.drawable.amaluca,
-                nome = getString(R.string.amaluca_nome),
-                categoria = getString(R.string.amaluca_categoria),
-                descricao = getString(R.string.amaluca_descricao),
-                telefone = "(16) 3392-6888",
-                endereco = getString(R.string.amaluca_endereco)
-            ),
-            Comercio(
-                id = 5,
-                foto = R.drawable.alves,
-                nome = getString(R.string.alves_mercado_nome),
-                categoria = getString(R.string.alves_mercado_categoria),
-                descricao = getString(R.string.alves_mercado_descricao),
-                telefone = "(16) 3392-7510",
-                endereco = getString(R.string.alves_mercado_endereco)
-            ),
-            Comercio(
-                id = 6,
-                foto = R.drawable.pontodochurrasco,
-                nome = getString(R.string.ponto_churrasco_nome),
-                categoria = getString(R.string.ponto_churrasco_categoria),
-                descricao = getString(R.string.ponto_churrasco_descricao),
-                telefone = "(16) 3392-2665",
-                endereco = getString(R.string.ponto_churrasco_endereco)
-            )
-        )
+    private fun loadData() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            val db = AppDatabase.Companion.getInstance(this@MainActivity)
+            val listaDoBanco = db.comercioDao().listarTodos()
+            comercios = listaDoBanco.toMutableList()
 
-        adapter = ComercioAdapter(this, listaComercios)
-        binding.listViewComercios.adapter = adapter
-    }
 
-    private fun configurarClique() {
-        binding.listViewComercios.onItemClickListener =
-            AdapterView.OnItemClickListener { _, _, position, _ ->
-                val comercio = listaComercios[position]
-
-                val intent = Intent(this, DetalheActivity::class.java).apply {
-                    putExtra("NOME_COMERCIO", comercio.nome)
-                    putExtra("CATEGORIA_COMERCIO", comercio.categoria)
-                    putExtra("DESCRICAO_COMERCIO", comercio.descricao)
-                    putExtra("TELEFONE_COMERCIO", comercio.telefone)
-                    putExtra("ENDERECO_COMERCIO", comercio.endereco)
-                    putExtra("IMAGEM_COMERCIO", comercio.foto)
+            withContext(Dispatchers.Main) {
+                adapter = ComercioAdapter(comercios) { comercio ->
+                    val intent = Intent(this@MainActivity, DetalheActivity::class.java)
+                    intent.putExtra("comercio", comercio)
+                    startActivity(intent)
                 }
-                startActivity(intent)
+                binding.recyclerComercios.adapter = adapter
             }
+        }
+    }
+
+    private fun setupRecyclerView() {
+        adapter = ComercioAdapter(emptyList()) { comercio ->
+            val intent = Intent(this, DetalheActivity::class.java)
+            intent.putExtra("comercio", comercio)
+            startActivity(intent)
+        }
+
+        binding.recyclerComercios.apply {
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            addItemDecoration(
+                DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+            )
+        }
+    }
+
+    //---
+    private fun setupListeners() {
+        binding.btnAdicionar.setOnClickListener {
+            val intent = Intent(this, CadastroActivity::class.java)
+            startActivity(intent)
+        }
+
+        //textWatcher
+        binding.edtFiltro.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val filtro = s.toString().lowercase()
+                val filtrados = comercios.filter {
+                    it.nome.lowercase().contains(filtro) ||
+                            it.categoria.lowercase().contains(filtro)
+                }
+                adapter = ComercioAdapter(filtrados) { comercio ->
+                    val intent = Intent(this@MainActivity, DetalheActivity::class.java)
+                    intent.putExtra("comercio", comercio)
+                    startActivity(intent)
+                }
+                binding.recyclerComercios.adapter = adapter
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        loadData()
     }
 }
