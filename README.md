@@ -16,7 +16,7 @@ Nesta **nova versão do projeto**, o aplicativo evoluiu de uma lista estática p
 
 ---
 
-## 🎥 Demonstração em Vídeo
+## 🎥 Explicação do código em Vídeo
 [![YouTube](https://img.shields.io/badge/YouTube-Assista%20ao%20Vídeo-red?logo=youtube)](https://youtu.be/K8-Vs5UYElA)
 
 ## 🎥 Demonstração em Vídeo
