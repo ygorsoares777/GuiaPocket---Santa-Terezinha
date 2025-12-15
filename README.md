@@ -1,6 +1,72 @@
 # 📱 Guia Pocket - Santa Terezinha
 
-## 📋 Sobre o Projeto
+## 📋 Parte 2 Sobre o Projeto
+
+## 🆕 Novidades do Projeto Atual
+
+- 🗄️ **Persistência de dados com Room Database**
+- ➕ **Cadastro de novos estabelecimentos pelo usuário**
+- 🖼️ **Seleção de imagem da galeria usando Activity Result**
+- 🔍 **Filtro em tempo real por nome e categoria**
+- ♻️ **RecyclerView com Adapter personalizado**
+- 🔁 **Atualização automática da lista ao retornar para a tela principal**
+
+---
+
+## 🎥 Demonstração em Vídeo
+
+🎬 Vídeo demonstrando:
+- Cadastro de um novo comércio
+- Listagem automática
+- Filtro em tempo real
+- Tela de detalhes
+- Ligações e navegação pelo Google Maps
+
+
+
+https://github.com/user-attachments/assets/3954573a-0827-4c4b-8408-1ead8b493d74
+
+
+
+---
+
+## ✨ Funcionalidades
+
+- 📋 **Listagem de Estabelecimentos**
+  - Exibição em **RecyclerView**
+  - Nome, categoria e imagem
+  - Atualização automática dos dados
+
+- ➕ **Cadastro de Comércios**
+  - Inserção de dados pelo usuário
+  - Seleção de imagem da galeria
+  - Salvamento local no banco de dados
+
+- 🔍 **Filtro em Tempo Real**
+  - Pesquisa por nome ou categoria
+  - Atualização instantânea da lista
+
+- 📄 **Tela de Detalhes**
+  - Informações completas do comércio
+  - Imagem, descrição e contatos
+
+- 📞 **Intents Nativas**
+  - Ligar para o estabelecimento
+  - Abrir endereço no Google Maps
+ 
+  ## 🛠 Tecnologias Utilizadas
+
+- **Linguagem:** Kotlin  
+- **Arquitetura:** Activities  
+- **Persistência:** Room Database  
+- **Concorrência:** Coroutines + lifecycleScope  
+- **UI:** XML + ViewBinding  
+- **Listagem:** RecyclerView + Adapter personalizado  
+- **APIs Android:**
+  - Intents explícitas e implícitas
+  - Activity Result API  
+
+## 📋 Sobre o Projeto parte 1
 
 O **Guia Pocket - Santa Terezinha** é um aplicativo Android desenvolvido em Kotlin que funciona como um guia comercial completo para o bairro Santa Terezinha, em Américo Brasiliense/SP.
 
