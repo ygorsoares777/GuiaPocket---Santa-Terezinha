@@ -1,6 +1,9 @@
 # 📱 Guia Pocket - Santa Terezinha
 
 ## 📋 Parte 2 Sobre o Projeto
+O **Guia Pocket – Santa Terezinha** é um aplicativo Android desenvolvido em **Kotlin** que funciona como um **guia comercial local**, permitindo cadastrar, visualizar, pesquisar e acessar informações detalhadas de estabelecimentos do bairro Santa Terezinha, em Américo Brasiliense/SP.
+
+Nesta **nova versão do projeto**, o aplicativo evoluiu de uma lista estática para um sistema **dinâmico**, com **persistência de dados local**, **cadastro de novos comércios**, **filtro em tempo real** e uso de **boas práticas modernas do Android**.
 
 ## 🆕 Novidades do Projeto Atual
 
